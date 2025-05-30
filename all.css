@@ -1,0 +1,175 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(ressources/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Lora;
+    src: url(ressources/fonts/Lora-VariableFont_wght.ttf);
+}
+
+:root {
+    --bluelight: #1B7590;
+    --bluedark: #02263A;
+    --accentcolor: #FFBC6F;
+    --bluegradient: linear-gradient(var(--bluelight), var(--bluedark));
+    --greygradient: linear-gradient(to right, #F2E4E7, #F9ECEF);
+    --accentgradient: linear-gradient(var(--accentcolor), #fff);
+    --boxshadow: 5px 5px 10px rgba(0,0,0,0.25);
+}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Montserrat, Lora, system-ui, Arial;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--bluelight);
+    transition: 200ms ease-in;
+}
+
+section {
+    background: var(--greygradient);
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 1028px;
+    padding: 1rem 2rem;
+}
+
+.fa, .fa-brands {
+    color: var(--bluelight);
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    background: var(--bluegradient);
+    color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--bluelight);
+}
+
+h3 {
+    font-size: 2rem;
+    color: var(--bluedark);
+}
+
+h4 {
+    font-size: 1.75rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.25rem;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--accentcolor);
+    color: var(--bluelight);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--boxshadow);
+    transition: 300ms ease-in-out;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    
+}
+
+.button:hover {
+    background: var(--bluelight);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+
+
+/* Header Styles */
+header {
+    background: var(--bluegradient);
+    border-radius: 75px;
+    max-width: 500px;
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 1rem;
+    box-shadow: var(--boxshadow);
+    overflow: hidden;
+}
+
+header .fa {
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.header-content {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav {
+    max-height: 0;
+    pointer-events: none;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    transition: 300ms ease-in;
+}
+
+header nav.active {
+    max-height: 250px;
+    pointer-events: initial;
+}
+
+header nav a {
+    color: #fff;
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+header nav a:hover {
+    background: var(--accentcolor);
+}
+
+/* Section #Teaser Styles */
+
+#teaser {
+    width: 100%;
+    height: 100dvh;
+}
+
+.home-teaser {
+    background: url(ressources/images/backgrounds/bg-home.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+#teaser {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
