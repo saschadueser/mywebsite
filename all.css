@@ -23,6 +23,16 @@ html {
     scroll-behavior: smooth;
 }
 
+.allHidden {
+    opacity: 0;
+    transform: translateX(-50%);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 body {
     font-family: Montserrat, Lora, system-ui, Arial;
     margin: 0 auto;
@@ -39,6 +49,7 @@ section {
 }
 
 .content {
+    transition: 1s;
     margin: 0 auto;
     max-width: 1028px;
     padding: 1rem 2rem;
