@@ -7,6 +7,11 @@
 // Elements to observe
 const sections = document.querySelectorAll("section .content");
 
+// Setting the hidden class for all elements at first
+sections.forEach( el => {
+    el.classList.add("allHidden");
+})
+
 // Options set
 const options = {
     threshold: 0.5,
