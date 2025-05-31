@@ -56,7 +56,6 @@ section {
 }
 
 .fa, .fa-brands {
-    color: var(--bluelight);
     font-size: 2rem;
 }
 
@@ -124,6 +123,7 @@ header {
     top: 1rem;
     box-shadow: var(--boxshadow);
     overflow: hidden;
+    z-index: 9999;
 }
 
 header .fa {
@@ -189,7 +189,7 @@ header nav a:hover, header nav a:focus {
     background-size: cover;
 }
 
-#teaser {
+section#teaser {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -198,4 +198,50 @@ header nav a:hover, header nav a:focus {
 
 nav a.movingOut {
     background-position: right;
+}
+
+
+
+
+
+
+
+/**************************
+Styles for Service Section 
+**************************/
+
+section#service .content {
+    display: flex;
+    flex-flow: column;
+}
+
+.service-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.service-boxes > div h3 {
+    text-align: center;
+}
+
+.service-boxes > div {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background: var(--accentcolor);
+    margin: 0.25rem;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+/* Special Styles only for wide screen */
+@media screen and (min-width: 1028px) {
+
+    .service-boxes {
+        display: flex;
+        justify-content: space-between;
+    }
 }
