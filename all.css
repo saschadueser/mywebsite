@@ -210,6 +210,14 @@ nav a.movingOut {
 Styles for Service Section 
 **************************/
 
+section#service {
+    background: var(--bluegradient);
+}
+
+section#service h2 {
+    color: #FFBC6F;
+}
+
 section#service .content {
     display: flex;
     flex-flow: column;
@@ -223,6 +231,7 @@ section#service .content {
 
 .service-boxes > div h3 {
     text-align: center;
+    line-height: 0;
 }
 
 .service-boxes > div {
@@ -232,9 +241,47 @@ section#service .content {
     align-items: center;
     background: var(--accentcolor);
     margin: 0.25rem;
-    padding: 0 1rem;
+    padding: 1rem;
     border-radius: 1rem;
     cursor: pointer;
+    box-shadow: var(--boxshadow);
+}
+
+.service-boxes > div .fa {
+    font-size: 3rem;
+}
+
+.service-boxes > div:hover, .service-boxes > div:focus, .service-boxes > div.box-active {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.service-boxes > div:hover h3, .service-boxes > div:focus h3, .service-boxes > div.box-active h3 {
+    color: #fff;
+}
+
+.service-content {
+    overflow: hidden;
+    color: #fff;
+}
+
+.service-content h3 {
+    color: #fff;
+}
+
+.service-content-track {
+    display: none;
+    transition: 500ms;
+}
+
+.service-content-track > div {
+    flex: 1 0 100%;
+    transition: 500ms;
+}
+
+.service-content-track > div:not(:first-child) {
+    opacity: 0;
 }
 
 /* Special Styles only for wide screen */
@@ -244,4 +291,10 @@ section#service .content {
         display: flex;
         justify-content: space-between;
     }
+
+    .service-content-track {
+        display: flex;
+    }
+
+    
 }

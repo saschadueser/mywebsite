@@ -24,7 +24,7 @@ let observer = new IntersectionObserver( entries => {
         if (entry.isIntersecting) {
             entry.target.classList.remove("allHidden");
             entry.target.classList.add("visible")
-            observer.unobserve(el);
+            observer.unobserve(entry.target);
         }
     })
 }, options);
