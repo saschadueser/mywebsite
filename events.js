@@ -57,3 +57,16 @@ function navTabIndexReset() {
 // auto load to reset tabindex in nav-items - invisible at beginning
 window.addEventListener("load", navTabIndexReset);
 
+
+
+
+// animation for nav-items at unfocus items
+navItemEvents = ["mouseout", "focusout"];
+
+navItemEvents.forEach( eventTrigger => {
+    navigationItems.forEach( el => {
+        el.addEventListener(`${eventTrigger}`, (e) => {
+            e.target.classList.toggle("movingOut");
+        })
+    })
+})  

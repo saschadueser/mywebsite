@@ -144,7 +144,7 @@ header nav.active {
 }
 
 header nav a {
-    transition: 2s;
+    transition: 1s;
     color: #fff;
     padding: 0.5rem;
     display: block;
@@ -163,7 +163,7 @@ header nav a {
 
 header nav a:hover, header nav a:focus {
     color: #000;
-    background-position: right;
+    background-position: center;
 }
 
 /* Section #Teaser Styles */
@@ -185,6 +185,6 @@ header nav a:hover, header nav a:focus {
     justify-content: center;
 }
 
-@keyframes animatedNavPoints {
-    
+nav a.movingOut {
+    background-position: right;
 }
