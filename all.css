@@ -144,15 +144,26 @@ header nav.active {
 }
 
 header nav a {
+    transition: 2s;
     color: #fff;
     padding: 0.5rem;
     display: block;
     width: 100%;
     text-align: center;
+    background: linear-gradient(
+        to right,
+        transparent 33%,
+        var(--accentcolor) 33% 66%,
+        transparent 66% 100%
+    );
+    background-size: 300% 100%;
+    background-position: left;
+
 }
 
 header nav a:hover {
-    background: var(--accentcolor);
+    color: #000;
+    background-position: right;
 }
 
 /* Section #Teaser Styles */
@@ -172,4 +183,8 @@ header nav a:hover {
     flex-flow: column;
     align-items: center;
     justify-content: center;
+}
+
+@keyframes animatedNavPoints {
+    
 }
