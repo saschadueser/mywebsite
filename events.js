@@ -9,11 +9,16 @@ const teaserButton = document.querySelector("#teaser .button");
 
 const navigationEventsToActivate = ["click", "keydown"];
 
-// navigation EventHandler
-navigationEventsToActivate.forEach( kindOfEvent => {
-    navTrigger.addEventListener(`${kindOfEvent}`, (e) => {
-        // EventHandler for open oder close navigation
-        if(kindOfEvent === "click" || e.key == "Enter") {
+// animation for service section
+// Slide effect for the text-content
+const serviceKacheln = document.querySelectorAll(".service-boxes > div");
+const serviceContent = document.querySelector(".service-content-track");
+const serviceContentItems = document.querySelectorAll(".service-content-track > div");
+
+// Callback for Event Handler for navigation
+function navToggle(e) {
+// EventHandler for open oder close navigation
+        if(e.type === "click" || (e.type === "keydown" && e.key == "Enter")) {
             navigation.classList.toggle("active");
             e.target.classList.toggle("fa-xmark");
         }
@@ -26,8 +31,52 @@ navigationEventsToActivate.forEach( kindOfEvent => {
         } else {
             navTabIndexReset();
         }
+}
+
+// Callback for Event Handler for the Service Boxes
+function serviceBoxesClickable(e) {
+    if (e.type === "click" || (e.type === "keydown" && e.key === "Enter")) {
+        serviceContentItems.forEach( textEl => {
+            textEl.style.opacity = "0"
+        })
+
+        switch(e.currentTarget.classList.value) {
+            case "service-websites":
+                serviceContent.style.transform = "translate(-100%)";
+                serviceContentItems[1].style.opacity = "1";
+                break;
+            case "service-seo":
+                serviceContent.style.transform = "translate(-200%)";
+                serviceContentItems[2].style.opacity = "1";
+                break;
+            case "service-wartung":
+                serviceContent.style.transform = "translate(-300%)";
+                serviceContentItems[3].style.opacity = "1";
+                break;
+            case "service-text":
+                serviceContent.style.transform = "translate(-400%)";
+                serviceContentItems[4].style.opacity = "1";
+                break;
+        }
+
+    }
+
+}
+
+// navigation EventHandler
+navigationEventsToActivate.forEach( eventTrigger => {
+    // Eventhandler for navigation
+    navTrigger.addEventListener(`${eventTrigger}`, navToggle);
+    // Eventhandler for service Boxes
+    serviceKacheln.forEach( el => {
+        el.addEventListener(`${eventTrigger}`, serviceBoxesClickable)
     })
 })
+
+
+
+
+
 
 
 
@@ -43,46 +92,6 @@ navItemEvents.forEach( eventTrigger => {
 })  
 
 
-
-// animation for service section
-// Slide effect for the text-content
-const serviceKacheln = document.querySelectorAll(".service-boxes > div");
-const serviceContent = document.querySelector(".service-content-track");
-const serviceContentItems = document.querySelectorAll(".service-content-track > div");
-
-serviceKacheln.forEach( el => {
-
-    navigationEventsToActivate.forEach( event => {
-        el.addEventListener(`${event}`, (e) => {
-            if (e.type === "click" || (e.type === "keydown" && e.key === "Enter")) {
-                serviceContentItems.forEach( textEl => {
-                    textEl.style.opacity = "0"
-                })
-
-                switch(e.currentTarget.classList.value) {
-                    case "service-websites":
-                        serviceContent.style.transform = "translate(-100%)";
-                        serviceContentItems[1].style.opacity = "1";
-                        break;
-                    case "service-seo":
-                        serviceContent.style.transform = "translate(-200%)";
-                        serviceContentItems[2].style.opacity = "1";
-                        break;
-                    case "service-wartung":
-                        serviceContent.style.transform = "translate(-300%)";
-                        serviceContentItems[3].style.opacity = "1";
-                        break;
-                    case "service-text":
-                        serviceContent.style.transform = "translate(-400%)";
-                        serviceContentItems[4].style.opacity = "1";
-                        break;
-                }
-
-            }
-
-        });
-    })
-})
 
 
 
@@ -114,6 +123,3 @@ function navTabIndexReset() {
 
 // auto load to reset tabindex in nav-items - invisible at beginning
 window.addEventListener("load", navTabIndexReset);
-
-
-alert("test")
