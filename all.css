@@ -44,6 +44,10 @@ a {
     transition: 200ms ease-in;
 }
 
+address {
+    font-style: normal;
+}
+
 section {
     background: var(--greygradient);
 }
@@ -254,7 +258,7 @@ section#service .content {
 .service-boxes > div:hover, .service-boxes > div:focus, .service-boxes > div.box-active {
     background: transparent;
     color: #fff;
-    border: 1px solid #fff;
+    outline: 1px solid #fff;
 }
 
 .service-boxes > div:hover h3, .service-boxes > div:focus h3, .service-boxes > div.box-active h3 {
@@ -297,4 +301,55 @@ section#service .content {
     }
 
     
+}
+
+
+
+
+
+
+footer {
+    width: 100%;
+    background: var(--bluegradient);
+    color: #fff;
+}
+
+footer .widget-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a {
+    transition: 1s;
+    color: #fff;
+}
+
+.widget-footer .fa, .widget-footer .fa-brands {
+    font-size: 1rem;
+    color: var(--accentcolor);
+}
+
+.widget-footer li:hover .fa, .widget-footer li:focus .fa-brands {
+    color: #fff;
+}
+
+footer .contact {
+    display: flex;
+    flex-flow: column;
+}
+
+.copyright-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .content > div {
+    margin: 1rem 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
 }
