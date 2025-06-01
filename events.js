@@ -114,3 +114,6 @@ function navTabIndexReset() {
 
 // auto load to reset tabindex in nav-items - invisible at beginning
 window.addEventListener("load", navTabIndexReset);
+
+
+alert("test")
