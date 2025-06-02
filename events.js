@@ -96,10 +96,51 @@ navItemEvents.forEach( eventTrigger => {
 
 
 
-// Setting Tabindexes
+
+
+
+
+
+
+
+
+
+//animation of projekte section
+
+// relevant elements
+const descriptionContainer = document.querySelector(".projekt-description");
+const tusLogo = document.querySelector(".logo-tus");
+const nightlifeLogo = document.querySelector(".logo-nightlife");
+const ttcLogo = document.querySelector(".logo-ttc");
+const projektLogos = [tusLogo, nightlifeLogo, ttcLogo];
+const projektPreview = document.querySelector(".projekt-image");
+const previewImage = ["tus", "nightlife", "ttc"]
+const projekteLogos = [tusLogo, nightlifeLogo, ttcLogo];
+
+//Looping and set Event Listener to every Logo for changing text and image
+for (let logoIndex in projekteLogos) {
+    projekteLogos[logoIndex].addEventListener("click", (e) => {
+        descriptionContainer.style.transform = `translateX(-${logoIndex * 100}%)`
+        previewImage.forEach( el => {
+            projektPreview.classList.remove(`${el}`);
+        })
+        projektPreview.classList.add(`${previewImage[logoIndex]}`);
+    })
+}
+
+
+
+
+
+
+//** 
+// 
+// Handling TabIndexes
+// 
+// */
 
 // Which elements should get tabIndexes
-const tabIndexElements = [navTrigger, navigationItems, teaserButton, serviceKacheln];
+const tabIndexElements = [navTrigger, navigationItems, teaserButton, serviceKacheln, projektLogos];
 
 // Set the tabindex, anker points for using Tab Key
 let currentTabIndex = 0;
@@ -123,27 +164,3 @@ function navTabIndexReset() {
 
 // auto load to reset tabindex in nav-items - invisible at beginning
 window.addEventListener("load", navTabIndexReset);
-
-
-
-
-
-
-
-
-
-//animation of projekte section
-
-const descriptionContainer = document.querySelector(".projekt-description");
-
-const tusLogo = document.querySelector(".logo-tus");
-const nightlifeLogo = document.querySelector(".logo-nightlife");
-const ttcLogo = document.querySelector(".logo-ttc");
-
-const projekteLogos = [tusLogo, nightlifeLogo, ttcLogo];
-
-for (let logo in projekteLogos) {
-    projekteLogos[logo].addEventListener("click", (e) => {
-        descriptionContainer.style.transform = `translateX(-${logo * 100}%)`
-    })
-}
