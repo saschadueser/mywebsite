@@ -305,6 +305,76 @@ section#service .content {
 
 
 
+.projekte-details {
+    display: flex;
+    gap: 1rem;
+    flex-flow: column;
+}
+
+.projekt-logos {
+    display: flex;
+    justify-content: space-around;
+}
+
+.projekt-logos div {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.logo-tus {
+    background: url(ressources/images/logos/tuseversten-logo.png) no-repeat center;
+    background-size: contain;
+}
+
+.logo-nightlife {
+    background: url(ressources/images/logos/nightlifeevents-logo.png) no-repeat center;
+    background-size: contain;
+}
+
+.logo-ttc {
+    background: url(ressources/images/logos/ttc-logo.png) no-repeat center;
+    background-size: contain;
+}
+
+.projekt-image {
+    width: 100%;
+    height: 500px;
+    background: url(ressources/images/mockups/mockup-tus-eversten-2000px.jpg) no-repeat;
+    background-size: cover;
+    flex: 1;
+    border-radius: 50px;
+    box-shadow: var(--boxshadow);
+}
+
+.projekt-details {
+    flex: 1;
+    overflow: hidden;
+}   
+
+.projekt-description {
+    display: flex;
+    flex-flow: row nowrap;
+    transition: 500ms;
+}
+
+.projekt-description > div {
+    flex: 1 0 100%;
+}
+
+@media screen and (min-width: 1028px) {
+
+    .projekte-details {
+        flex-flow: row;
+    }
+
+    .projekt-image {
+        height: auto;
+    }
+
+}
+
 
 
 

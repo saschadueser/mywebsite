@@ -123,3 +123,27 @@ function navTabIndexReset() {
 
 // auto load to reset tabindex in nav-items - invisible at beginning
 window.addEventListener("load", navTabIndexReset);
+
+
+
+
+
+
+
+
+
+//animation of projekte section
+
+const descriptionContainer = document.querySelector(".projekt-description");
+
+const tusLogo = document.querySelector(".logo-tus");
+const nightlifeLogo = document.querySelector(".logo-nightlife");
+const ttcLogo = document.querySelector(".logo-ttc");
+
+const projekteLogos = [tusLogo, nightlifeLogo, ttcLogo];
+
+for (let logo in projekteLogos) {
+    projekteLogos[logo].addEventListener("click", (e) => {
+        descriptionContainer.style.transform = `translateX(-${logo * 100}%)`
+    })
+}
