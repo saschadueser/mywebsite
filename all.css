@@ -49,6 +49,7 @@ address {
 }
 
 section {
+    padding: 1rem 0;
     background: var(--greygradient);
 }
 
@@ -92,27 +93,49 @@ h6 {
     font-size: 1.25rem;
 }
 
-.button {
+.button, input[type='submit'] {
     display: inline-block;
     text-decoration: none;
     background: var(--accentcolor);
     color: var(--bluelight);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 1rem;
     box-shadow: var(--boxshadow);
     transition: 300ms ease-in-out;
     border: none;
-    font-size: 1rem;
+    font-size: 1.25rem;
     cursor: pointer;
-    
+    font-weight: 600;
 }
 
-.button:hover {
+.button:hover, input[type='submit']:hover, input[type='submit']:focus {
     background: var(--bluelight);
     color: #fff;
     transform: scale(1.05);
 }
 
+input, textarea {
+    border-radius: 1rem;
+    padding: 1rem;
+    border: none;
+    font-size: 1rem;
+}
+
+input:hover, textarea:hover {
+    outline: 5px solid var(--accentcolor);
+    cursor: pointer;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+.form-element {
+    display: flex;
+    flex-flow: column;
+    margin: 1.5rem 0;
+    gap: 1rem;
+}
 
 
 /* Header Styles */
