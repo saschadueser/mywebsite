@@ -469,3 +469,31 @@ footer ul {
     list-style: none;
     padding: 0;
 }
+
+
+
+
+
+
+
+
+.contact-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.contact-options a {
+    flex: 1 1 250px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 75px;
+    padding: 1rem;
+}
+
+.contact-options a:hover, .contact-options a:focus {
+    background: var(--accentcolor);
+}

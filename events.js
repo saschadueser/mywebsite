@@ -150,6 +150,7 @@ tabIndexElements.forEach( el => {
             li.setAttribute("tabindex", ++currentTabIndex);
         });
     } else {
+        
         el.setAttribute("tabindex", ++currentTabIndex);
     }
 })
