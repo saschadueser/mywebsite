@@ -507,13 +507,17 @@ footer ul {
         gap: 1rem;
     }
 
-    section#contact .content > * {
+    section#contact .content address {
         flex: 1;
         flex-flow: column;
     }
 
+    section#contact .content form {
+        flex: 2;
+    }
+
     .contact-options {
-        flex-flow: column wrap;
+        flex-flow: column nowrap;
         align-items: stretch;
     }
 
@@ -529,4 +533,18 @@ footer ul {
         color: var(--accentcolor);
     }
 
+}
+
+
+
+
+
+
+section#about {
+    background: var(--bluegradient);
+    color: #fff;
+}
+
+section#about h2 {
+    color: #fff;
 }
