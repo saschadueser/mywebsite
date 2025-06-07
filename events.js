@@ -132,6 +132,18 @@ for (let logoIndex in projekteLogos) {
 
 
 
+/**
+ * Contact form
+ */
+
+//relevant elements
+const formInputs = document.querySelectorAll(".form-element")
+
+
+
+
+
+
 
 //** 
 // 
@@ -140,7 +152,7 @@ for (let logoIndex in projekteLogos) {
 // */
 
 // Which elements should get tabIndexes
-const tabIndexElements = [navTrigger, navigationItems, teaserButton, serviceKacheln, projektLogos];
+const tabIndexElements = [navTrigger, navigationItems, teaserButton, serviceKacheln, projektLogos, formInputs];
 
 // Set the tabindex, anker points for using Tab Key
 let currentTabIndex = 0;
@@ -150,7 +162,7 @@ tabIndexElements.forEach( el => {
             li.setAttribute("tabindex", ++currentTabIndex);
         });
     } else {
-        
+
         el.setAttribute("tabindex", ++currentTabIndex);
     }
 })
