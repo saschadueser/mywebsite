@@ -156,27 +156,27 @@
                     <h3>Kontaktformular</h3>
                     <div class="form-element">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" placeholder="Max Mustermann" class="form-element" required>
+                        <input type="text" name="name" id="name" placeholder="Max Mustermann" class="form-element-input" required>
                     </div>
                     <div class="form-element">
                         <label for="mail">eMail-Adresse:</label>
-                        <input type="email" id="mail" placeholder="max@mustermann.de" class="form-element" required>
+                        <input type="email" name="email" id="mail" placeholder="max@mustermann.de" class="form-element-input" required>
                     </div>
                     <div class="form-element">
                         <label for="phone">Telefon:</label>
-                        <input type="tel" id="phone" placeholder="0123 456789" class="form-element">
+                        <input type="tel" name="phone" id="phone" placeholder="0123 456789" class="form-element-input" pattern="[0-9]*">
                     </div>
                     <div class="form-element">
                         <label for="message">Nachricht:</label>
-                        <textarea name="message" id="message" rows="10" class="form-element" required placeholder="Hi Sascha, ich habe folgendes Anliegen an dich"></textarea>
+                        <textarea name="message" id="message" rows="10" class="form-element-input" required placeholder="Hi Sascha, ich habe folgendes Anliegen an dich"></textarea>
                     </div>
                     <div class="form-element">
                         <label for="datenschutz-check">Datenschutz-Zustimmung</label>
-                        <span><input id="datenschutz-check" type="checkbox" required> Aktiviere diese Checkbox wenn du damit 
+                        <span><input id="datenschutz-check" class="form-element-input" type="checkbox" required> Aktiviere diese Checkbox wenn du damit 
                             einverstanden bist deine eingegebenen Daten, den Datenschutzbestimmungen dieser Website 
                             entsprechend, zu übersenden und, dass diese verarbeitet werden dürfen.</span>
                     </div>
-                    <input type="submit" class="form-element" value="Nachricht absenden">
+                    <input type="submit" class="submitButton" value="Nachricht absenden">
                 </form>
                 <address>
                     <h3>Weitere Optionen</h3>

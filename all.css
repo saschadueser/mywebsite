@@ -114,6 +114,15 @@ h6 {
     transform: scale(1.05);
 }
 
+input[type='submit']:disabled {
+    background: var(--greygradient);
+    color: #000;
+}
+
+input[type='submit']:disabled:hover, input[type='submit']:disabled:focus {
+    transform: none;
+}
+
 input, textarea {
     border-radius: 1rem;
     padding: 1rem;
