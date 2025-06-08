@@ -156,11 +156,11 @@
                     <h3>Kontaktformular</h3>
                     <div class="form-element">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" placeholder="Max Mustermann" class="form-element">
+                        <input type="text" id="name" placeholder="Max Mustermann" class="form-element" required>
                     </div>
                     <div class="form-element">
                         <label for="mail">eMail-Adresse:</label>
-                        <input type="email" id="mail" placeholder="max@mustermann.de" class="form-element">
+                        <input type="email" id="mail" placeholder="max@mustermann.de" class="form-element" required>
                     </div>
                     <div class="form-element">
                         <label for="phone">Telefon:</label>
@@ -168,7 +168,13 @@
                     </div>
                     <div class="form-element">
                         <label for="message">Nachricht:</label>
-                        <textarea name="message" id="message" rows="10" class="form-element" placeholder="Hi Sascha, ich habe folgendes Anliegen an dich"></textarea>
+                        <textarea name="message" id="message" rows="10" class="form-element" required placeholder="Hi Sascha, ich habe folgendes Anliegen an dich"></textarea>
+                    </div>
+                    <div class="form-element">
+                        <label for="datenschutz-check">Datenschutz-Zustimmung</label>
+                        <span><input id="datenschutz-check" type="checkbox" required> Aktiviere diese Checkbox wenn du damit 
+                            einverstanden bist deine eingegebenen Daten, den Datenschutzbestimmungen dieser Website 
+                            entsprechend, zu übersenden und, dass diese verarbeitet werden dürfen.</span>
                     </div>
                     <input type="submit" class="form-element" value="Nachricht absenden">
                 </form>
