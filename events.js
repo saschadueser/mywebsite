@@ -132,75 +132,9 @@ for (let logoIndex in projekteLogos) {
 
 
 
-/**
- * Contact form validation
- */
 
-//relevant elements
-const formInputs = document.querySelectorAll(".form-element-input")
-const formInputCheckbox = document.querySelector("form input[type='checkbox']");
-const formInputSubmit = document.querySelector("form input[type='submit']");
-const form = document.querySelector("form");
-const formInputsLabel = document.querySelectorAll("form label");
 
-const errorMessageElement = document.createElement("p");
-const emptyMessageElement = document.createElement("p");
-emptyMessageElement.textContent = "Bitte dieses Feld ausfüllen.";
-errorMessageElement.textContent = "Bitte korrigiere dieses Feld. Da stimmt etwas nicht.";
 
-formInputSubmit.disabled = true;
-
-// EventHandler for Checkbox reacting on pressing the Enter Key
-formInputCheckbox.addEventListener("keydown", (e) => {
-    if(e.key === "Enter" && !e.target.checked) {
-        e.target.checked = true;
-    } else {
-        e.target.checked = false
-    }
-})
-
-// Checking if values in form element. If not set a message after the button
-function setSubmitButtonHint() {
-    if(formInputSubmit.disabled) {
-        let submitHint = document.createElement("p");
-        submitHint.textContent = "Zum aktivieren des Absende-Buttons bitte alle Felder ausfüllen";
-        form.appendChild(submitHint)
-    }
-}
-
-// Setting an array with all the valid status of the input Elements
-formInputsCheck = [];
-
-formInputs.forEach( (el, index) => {
-
-    if(el.id === "datenschutz-check") {
-        console.log("test")
-    }
-
-    el.addEventListener("input", e => {
-        formInputsCheck[index] = el.validity.valid;
-
-        // Checking if all input is valid now
-        if(formInputsCheck.indexOf(false) === -1) {
-            formInputSubmit.disabled = false;
-        } else {
-            formInputSubmit.disabled = true;
-        }
-
-        el.addEventListener("focusout", (e) => {
-            if (e.target.value === "") {
-                formInputsLabel[index].appendChild(emptyMessageElement);
-            } else if(!e.target.validity.valid) {
-                formInputsLabel[index].appendChild(errorMessageElement);
-            } else {
-                formInputsLabel[index].removeChilds(emptyMessageElement);
-                formInputsLabel[index].removeChilds(errorMessageElement);
-            }
-        })
-    })
-
-    formInputsCheck[index] = el.validity.valid;
-})
 
 
 //** 
@@ -210,7 +144,17 @@ formInputs.forEach( (el, index) => {
 // */
 
 // Which elements should get tabIndexes
-const tabIndexElements = [navTrigger, navigationItems, teaserButton, serviceKacheln, projektLogos, formInputs, formInputSubmit];
+const tabIndexElements = [
+    navTrigger, 
+    navigationItems, 
+    teaserButton, 
+    serviceKacheln, 
+    projektLogos, 
+    formObject.elements.formInputElements, 
+    formObject.elements.formInputSubmit
+];
+
+console.log(formObject.elements.formInputElements)
 
 // Set the tabindex, anker points for using Tab Key
 let currentTabIndex = 0;
