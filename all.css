@@ -406,8 +406,8 @@ section#service .content {
 }
 
 .projekt-description > div {
+    width: 100%;
     flex: 1 0 100%;
-    padding: 1rem;
 }
 
 #projekte .fa-external-link {
@@ -477,6 +477,18 @@ footer .content > div {
 footer ul {
     list-style: none;
     padding: 0;
+}
+
+
+
+
+
+
+
+
+section#about .content img {
+    float: left;
+    margin: 0 1rem;
 }
 
 

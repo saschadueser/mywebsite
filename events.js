@@ -133,7 +133,7 @@ for (let logoIndex in projekteLogos) {
 
 
 /**
- * Contact form
+ * Contact form validation
  */
 
 //relevant elements
@@ -141,6 +141,12 @@ const formInputs = document.querySelectorAll(".form-element-input")
 const formInputCheckbox = document.querySelector("form input[type='checkbox']");
 const formInputSubmit = document.querySelector("form input[type='submit']");
 const form = document.querySelector("form");
+const formInputsLabel = document.querySelectorAll("form label");
+
+const errorMessageElement = document.createElement("p");
+const emptyMessageElement = document.createElement("p");
+emptyMessageElement.textContent = "Bitte dieses Feld ausfüllen.";
+errorMessageElement.textContent = "Bitte korrigiere dieses Feld. Da stimmt etwas nicht.";
 
 formInputSubmit.disabled = true;
 
@@ -171,8 +177,7 @@ formInputs.forEach( (el, index) => {
         console.log("test")
     }
 
-    el.addEventListener("change", e => {
-        console.log("The valid status of the actual element is " + el.validity.valid);
+    el.addEventListener("input", e => {
         formInputsCheck[index] = el.validity.valid;
 
         // Checking if all input is valid now
@@ -181,7 +186,19 @@ formInputs.forEach( (el, index) => {
         } else {
             formInputSubmit.disabled = true;
         }
+
+        el.addEventListener("focusout", (e) => {
+            if (e.target.value === "") {
+                formInputsLabel[index].appendChild(emptyMessageElement);
+            } else if(!e.target.validity.valid) {
+                formInputsLabel[index].appendChild(errorMessageElement);
+            } else {
+                formInputsLabel[index].removeChilds(emptyMessageElement);
+                formInputsLabel[index].removeChilds(errorMessageElement);
+            }
+        })
     })
+
     formInputsCheck[index] = el.validity.valid;
 })
 
