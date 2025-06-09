@@ -145,7 +145,7 @@ const form = document.querySelector("form");
 formInputSubmit.disabled = true;
 
 // EventHandler for Checkbox reacting on pressing the Enter Key
-formInputCheckbox.addEventListener("keypress", (e) => {
+formInputCheckbox.addEventListener("keydown", (e) => {
     if(e.key === "Enter" && !e.target.checked) {
         e.target.checked = true;
     } else {
