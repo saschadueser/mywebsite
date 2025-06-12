@@ -150,11 +150,8 @@ const tabIndexElements = [
     teaserButton, 
     serviceKacheln, 
     projektLogos, 
-    formObject.elements.formInputElements, 
-    formObject.elements.formInputSubmit
 ];
 
-console.log(formObject.elements.formInputElements)
 
 // Set the tabindex, anker points for using Tab Key
 let currentTabIndex = 0;
